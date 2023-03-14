@@ -7,7 +7,8 @@ model = torch.hub.load('ultralytics/yolov5', 'yolov5s', pretrained=True)
 
 image = Image.open('test-1.jpg')
 results = model(image)
-#删除一行
+
+print(results)
 print(model)
 # 获取所有检测到的目标的类别标签、置信度、位置和面积等信息
 labels = results.xyxy[0][:, -1].cpu().numpy()
